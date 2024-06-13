@@ -10,7 +10,7 @@ import {
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const {
     handleSubmit,
     register,
@@ -19,7 +19,20 @@ const Login = () => {
   return (
     <Box py='96px' maxW={420} mx='auto'>
       <form onSubmit={handleSubmit()}>
-        <FormControl isInvalid={errors.email}>
+        <FormControl isInvalid={errors.name}>
+          <FormLabel htmlFor='name'>Name</FormLabel>
+          <Input
+            id='name'
+            placeholder='Name'
+            {...register("name", {
+              required: "Name is required",
+            })}
+          />
+          <FormErrorMessage>
+            {errors.name && errors.name.message}
+          </FormErrorMessage>
+        </FormControl>
+        <FormControl mt={4} isInvalid={errors.email}>
           <FormLabel htmlFor='email'>Email</FormLabel>
           <Input
             id='email'
@@ -42,7 +55,7 @@ const Login = () => {
             })}
           />
           <FormErrorMessage>
-            {errors.email && errors.email.message}
+            {errors.password && errors.password.message}
           </FormErrorMessage>
         </FormControl>
         <Button
@@ -52,7 +65,7 @@ const Login = () => {
           colorScheme='teal'
           isLoading={isSubmitting}
           type='submit'>
-          Login
+          Register
         </Button>
       </form>
       <Text mt={4} display='flex' alignItems='center' gap={2}>
@@ -67,4 +80,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
