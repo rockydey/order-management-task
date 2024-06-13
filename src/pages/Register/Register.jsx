@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -20,6 +20,8 @@ const Register = () => {
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleRegister = (data) => {
     const email = data.email;
@@ -29,6 +31,7 @@ const Register = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("Registered successfully!");
+        navigate(location.state?.from?.pathname || "/");
       })
       .catch((error) => console.error(error));
   };

@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import ActiveSale from "../pages/ActiveSale/ActiveSale";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ActiveSale />,
+        element: (
+          <PrivateRoute>
+            <ActiveSale />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

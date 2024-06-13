@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -20,6 +20,8 @@ const Login = () => {
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (data) => {
     const email = data.email;
@@ -29,6 +31,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("Logged in successfully!");
+        navigate(location.state?.from?.pathname || "/");
       })
       .catch((error) => console.error(error));
   };
@@ -38,6 +41,7 @@ const Login = () => {
         <FormControl isInvalid={errors.email}>
           <FormLabel htmlFor='email'>Email</FormLabel>
           <Input
+            type='email'
             id='email'
             placeholder='Email'
             {...register("email", {
@@ -51,6 +55,7 @@ const Login = () => {
         <FormControl mt={4} isInvalid={errors.password}>
           <FormLabel htmlFor='password'>Password</FormLabel>
           <Input
+            type='password'
             id='password'
             placeholder='Password'
             {...register("password", {
@@ -58,7 +63,7 @@ const Login = () => {
             })}
           />
           <FormErrorMessage>
-            {errors.email && errors.email.message}
+            {errors.password && errors.password.message}
           </FormErrorMessage>
         </FormControl>
         <Button
