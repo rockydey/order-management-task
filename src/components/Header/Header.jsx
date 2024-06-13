@@ -47,7 +47,7 @@ const Header = () => {
               <FaPlus /> Sale Order
             </Button>
           </Box>
-          <Link>
+          <Link to='/login'>
             <Text
               border='2px'
               px={4}
