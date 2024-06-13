@@ -10,9 +10,19 @@ import { Link, NavLink } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
 import "./Header.css";
 import { FaSun, FaMoon } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const handleLogout = () => {
+    logout().then(() => {
+      toast.success("Logout successfully!");
+    });
+  };
 
   return (
     <Box>
@@ -47,17 +57,34 @@ const Header = () => {
               <FaPlus /> Sale Order
             </Button>
           </Box>
-          <Link to='/login'>
-            <Text
-              border='2px'
-              px={4}
-              py={1}
-              borderRadius='md'
-              color='#2ECA7F'
-              borderColor='#2ECA7F'>
-              Login
-            </Text>
-          </Link>
+          {user ? (
+            <Box>
+              <Button
+                onClick={handleLogout}
+                border='2px'
+                px={4}
+                borderRadius='md'
+                color='#2ECA7F'
+                borderColor='#2ECA7F'
+                fontSize={20}
+                bg='#fff'
+                _hover={{ bg: "#fff" }}>
+                Logout
+              </Button>
+            </Box>
+          ) : (
+            <Link to='/login'>
+              <Text
+                border='2px'
+                px={4}
+                py={1}
+                borderRadius='md'
+                color='#2ECA7F'
+                borderColor='#2ECA7F'>
+                Login
+              </Text>
+            </Link>
+          )}
         </Box>
       </Box>
     </Box>

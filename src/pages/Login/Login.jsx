@@ -7,18 +7,34 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  const handleLogin = (data) => {
+    const email = data.email;
+    const password = data.password;
+
+    loginUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Logged in successfully!");
+      })
+      .catch((error) => console.error(error));
+  };
   return (
     <Box py='96px' maxW={420} mx='auto'>
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit(handleLogin)}>
         <FormControl isInvalid={errors.email}>
           <FormLabel htmlFor='email'>Email</FormLabel>
           <Input

@@ -7,18 +7,35 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  const handleRegister = (data) => {
+    const email = data.email;
+    const password = data.password;
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Registered successfully!");
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <Box py='96px' maxW={420} mx='auto'>
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit(handleRegister)}>
         <FormControl isInvalid={errors.name}>
           <FormLabel htmlFor='name'>Name</FormLabel>
           <Input
@@ -35,6 +52,7 @@ const Register = () => {
         <FormControl mt={4} isInvalid={errors.email}>
           <FormLabel htmlFor='email'>Email</FormLabel>
           <Input
+            type='email'
             id='email'
             placeholder='Email'
             {...register("email", {
@@ -48,6 +66,7 @@ const Register = () => {
         <FormControl mt={4} isInvalid={errors.password}>
           <FormLabel htmlFor='password'>Password</FormLabel>
           <Input
+            type='password'
             id='password'
             placeholder='Password'
             {...register("password", {
@@ -69,10 +88,10 @@ const Register = () => {
         </Button>
       </form>
       <Text mt={4} display='flex' alignItems='center' gap={2}>
-        Do not have an account?
-        <Link to='/register'>
+        Already have an account?
+        <Link to='/login'>
           <Text color='#2ECA7F' fontWeight='medium'>
-            Register Now
+            Login Now
           </Text>
         </Link>
       </Text>
