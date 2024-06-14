@@ -1,0 +1,245 @@
+[
+  {
+    "id": "order001",
+    "display_id": "ORD-001",
+    "owner": "Alice",
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "characteristics": {
+      "color": "Black",
+      "connectivity": "Bluetooth",
+      "battery_life": "12 months"
+    },
+    "features": ["Ergonomic design", "Compact size", "Customizable buttons"],
+    "brand": "Logitech",
+    "sku": [
+      {
+        "sku_id": "sku001-1",
+        "selling_price": 29.99,
+        "max_retail_price": 39.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 100,
+        "product": "Wireless Mouse - Black"
+      },
+      {
+        "sku_id": "sku001-2",
+        "selling_price": 27.99,
+        "max_retail_price": 37.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 150,
+        "product": "Wireless Mouse - White"
+      }
+    ]
+  },
+  {
+    "id": "order002",
+    "display_id": "ORD-002",
+    "owner": "Bob",
+    "name": "Gaming Keyboard",
+    "category": "Electronics",
+    "characteristics": {
+      "color": "RGB",
+      "switch_type": "Mechanical",
+      "connectivity": "Wired"
+    },
+    "features": ["Backlit keys", "Programmable macros", "Anti-ghosting"],
+    "brand": "Razer",
+    "sku": [
+      {
+        "sku_id": "sku002-1",
+        "selling_price": 79.99,
+        "max_retail_price": 99.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 50,
+        "product": "Gaming Keyboard - RGB"
+      },
+      {
+        "sku_id": "sku002-2",
+        "selling_price": 74.99,
+        "max_retail_price": 94.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 70,
+        "product": "Gaming Keyboard - Single Color"
+      }
+    ]
+  },
+  {
+    "id": "order003",
+    "display_id": "ORD-003",
+    "owner": "Charlie",
+    "name": "Smartphone",
+    "category": "Mobile Devices",
+    "characteristics": {
+      "color": "Midnight Black",
+      "screen_size": "6.5 inches",
+      "battery_capacity": "4500mAh"
+    },
+    "features": ["Triple camera", "Fast charging", "5G support"],
+    "brand": "Samsung",
+    "sku": [
+      {
+        "sku_id": "sku003-1",
+        "selling_price": 599.99,
+        "max_retail_price": 699.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 200,
+        "product": "Smartphone - 128GB"
+      },
+      {
+        "sku_id": "sku003-2",
+        "selling_price": 649.99,
+        "max_retail_price": 749.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 150,
+        "product": "Smartphone - 256GB"
+      }
+    ]
+  },
+  {
+    "id": "order004",
+    "display_id": "ORD-004",
+    "owner": "David",
+    "name": "Laptop",
+    "category": "Computers",
+    "characteristics": {
+      "color": "Space Gray",
+      "processor": "Intel i7",
+      "ram": "16GB",
+      "storage": "512GB SSD"
+    },
+    "features": ["Touchscreen", "Backlit keyboard", "Fingerprint reader"],
+    "brand": "Dell",
+    "sku": [
+      {
+        "sku_id": "sku004-1",
+        "selling_price": 999.99,
+        "max_retail_price": 1199.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 80,
+        "product": "Laptop - 16GB RAM, 512GB SSD"
+      },
+      {
+        "sku_id": "sku004-2",
+        "selling_price": 1099.99,
+        "max_retail_price": 1299.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 60,
+        "product": "Laptop - 32GB RAM, 1TB SSD"
+      }
+    ]
+  },
+  {
+    "id": "order005",
+    "display_id": "ORD-005",
+    "owner": "Eve",
+    "name": "Smartwatch",
+    "category": "Wearable Technology",
+    "characteristics": {
+      "color": "Silver",
+      "display": "AMOLED",
+      "battery_life": "7 days"
+    },
+    "features": ["Heart rate monitor", "GPS", "Water-resistant"],
+    "brand": "Apple",
+    "sku": [
+      {
+        "sku_id": "sku005-1",
+        "selling_price": 299.99,
+        "max_retail_price": 349.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 120,
+        "product": "Smartwatch - 40mm"
+      },
+      {
+        "sku_id": "sku005-2",
+        "selling_price": 329.99,
+        "max_retail_price": 379.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 100,
+        "product": "Smartwatch - 44mm"
+      }
+    ]
+  },
+  {
+    "id": "order006",
+    "display_id": "ORD-006",
+    "owner": "Frank",
+    "name": "Bluetooth Speaker",
+    "category": "Audio",
+    "characteristics": {
+      "color": "Blue",
+      "battery_life": "15 hours",
+      "water_resistant": "IPX7"
+    },
+    "features": ["360-degree sound", "Built-in microphone", "Portable"],
+    "brand": "JBL",
+    "sku": [
+      {
+        "sku_id": "sku006-1",
+        "selling_price": 89.99,
+        "max_retail_price": 109.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 300,
+        "product": "Bluetooth Speaker - Blue"
+      },
+      {
+        "sku_id": "sku006-2",
+        "selling_price": 84.99,
+        "max_retail_price": 104.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 250,
+        "product": "Bluetooth Speaker - Black"
+      }
+    ]
+  },
+  {
+    "id": "order007",
+    "display_id": "ORD-007",
+    "owner": "Grace",
+    "name": "Digital Camera",
+    "category": "Photography",
+    "characteristics": {
+      "color": "Black",
+      "resolution": "24.2MP",
+      "lens": "18-55mm"
+    },
+    "features": [
+      "4K video recording",
+      "Wi-Fi connectivity",
+      "Image stabilization"
+    ],
+    "brand": "Canon",
+    "sku": [
+      {
+        "sku_id": "sku007-1",
+        "selling_price": 499.99,
+        "max_retail_price": 599.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 40,
+        "product": "Digital Camera - 18-55mm lens"
+      },
+      {
+        "sku_id": "sku007-2",
+        "selling_price": 579.99,
+        "max_retail_price": 679.99,
+        "amount": 1,
+        "unit": "piece",
+        "quantity_in_inventory": 30,
+        "product": "Digital Camera - 18-135mm lens"
+      }
+    ]
+  }
+]
